@@ -1,8 +1,13 @@
 .logo-img {
   object-fit: cover;
   overflow: hidden;
-  height: fit-content;
 }
 
-.toggle-part {
+.image-part {
+  height: 50%;
+  width: min-content !important;
+}
+
+.bi-list {
+  height: f;
 }
