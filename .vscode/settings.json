@@ -1,0 +1,8 @@
+{
+    "git.enabled": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    }
+}
