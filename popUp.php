@@ -5,21 +5,14 @@ function displayMessage($sessionName, $variant)
 {
     if (isset($_SESSION[$sessionName])) {
 ?>
-        <div class='p-5 bottom-0 position-fixed flash-messages text-white' style="right:30%;transform: translateY(200%); opacity:0; transition: all 1s;
-        
-     
-        
-        ">
-            <div class='card p-4 position-relative'
-
-                style='background-color:   <?php
-                                            if ($variant == 'red') {
-                                                echo "red";
-                                            } else if ($variant == 'green') {
-                                                echo "green";
-                                            };
-                                            ?>
-            '>
+        <div class='p-5 bottom-0 position-fixed flash-messages text-white' style="right:30%;transform: translateY(200%); opacity:0; transition: all 1s;">
+            <div class='card p-4 position-relative' style='background-color: <?php
+                                                                                if ($variant == 'red') {
+                                                                                    echo "red";
+                                                                                } else if ($variant == 'green') {
+                                                                                    echo "green";
+                                                                                }
+                                                                                ?>'>
                 <i class='bi bi-x button-close position-absolute end-0 top-0 fs-2 cursor-pointer'></i>
                 <h4 class="text-white">Message</h4>
                 <p class='text-white'>
@@ -58,6 +51,3 @@ function displayMessage($sessionName, $variant)
         }
     });
 </script>
-
-<?php
-?>

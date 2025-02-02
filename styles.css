@@ -6,10 +6,18 @@ body{
 :root{
     --purple:#8C8AF0;
     --orange:#F45700;
+    --grey:#757575;
+
 }
 .cursor-pointer{
     cursor: pointer !important;
 }
+
+.active{
+    background-color:  var(--orange) !important;
+    color: white !important;
+}
+
 
 .my-flex{
     display:flex;
@@ -321,4 +329,25 @@ body{
   padding: 0.5rem 1rem !important;
   border-radius: 5px;
 
+}
+.switch{
+    height:20px;
+    width:40px;
+    border-radius:20px;
+    background-color: var(--orange) !important;
+    padding: 0.1rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    
+}
+
+
+.switch-btn{
+background-color: white !important;
+clip-path: circle();
+height: 100%;
+width:60%;
+z-index: 3;
+transition: all 0.3 seconds !important;
 }

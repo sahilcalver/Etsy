@@ -59,34 +59,57 @@
                                     <div class="card p-1">
                                         <div class="card-header">
                                             <div class="d-flex gap-1">
-                                                <div style="width:40px; height:40px;" class="d-flex bold align-items-center editor-option justify-content-center">
-                                                    <i class="bi bi-type-bold"></i>
+                                                <div style="width:40px; height:40px;" class="d-flex options bold align-items-center editor-option justify-content-center">
+                                                    <i class="bi  bi-type-bold"></i>
                                                 </div>
-                                                <div style="width:40px; height:40px;" class="d-flex underline editor-option  align-items-center justify-content-center">
-                                                    <i class="bi bi-type-underline"></i>
+                                                <div style="width:40px; height:40px;" class="d-flex options underline editor-option  align-items-center justify-content-center">
+                                                    <i class="bi  bi-type-underline"></i>
                                                 </div>
-                                                <div style="width:40px; height:40px;" class="d-flex italic editor-option align-items-center justify-content-center">
-                                                    <i class="bi bi-type-italic"></i>
+                                                <div style="width:40px; height:40px;" class="d-flex options italic editor-option align-items-center justify-content-center">
+                                                    <i class="bi  bi-type-italic"></i>
                                                 </div>
 
-                                                <div style="width:40px; height:40px;" class="d-flex strikethrough editor-option align-items-center justify-content-center">
-                                                    <i class="bi bi-type-strikethrough"></i>
+                                                <div style="width:40px; height:40px;" class="d-flex options strikethrough editor-option align-items-center justify-content-center">
+                                                    <i class="bi  bi-type-strikethrough"></i>
                                                 </div>
-                                                <div style="width:40px; height:40px;" class="d-flex leftside editor-option align-items-center justify-content-center">
-                                                    <i class="bi bi-text-left"></i>
+                                                <div style="width:40px; height:40px;" class="d-flex options leftside editor-option align-items-center justify-content-center">
+                                                    <i class="bi  bi-text-left"></i>
                                                 </div>
-                                                <div style="width:40px; height:40px;" class="d-flex centerside editor-option  align-items-center justify-content-center">
-                                                    <i class="bi bi-text-center"></i>
+                                                <div style="width:40px; height:40px;" class="d-flex options centerside editor-option  align-items-center justify-content-center">
+                                                    <i class="bi  bi-text-center"></i>
                                                 </div>
-                                                <div style="width:40px; height:40px;" class="d-flex rightside  editor-option align-items-center justify-content-center">
-                                                    <i class="bi bi-text-right"></i>
+                                                <div style="width:40px; height:40px;" class="d-flex options rightside  editor-option align-items-center justify-content-center">
+                                                    <i class="bi  bi-text-right"></i>
                                                 </div>
-                                                
+
                                             </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <textarea name="" value rows="5" style="resize: none; color: var(--grey)" class="form-control-plaintext textarea-text" id="">Keep your account secure with the authentication app</textarea>
                                         </div>
                                     </div>
 
                                 </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card p-4 border-0 shadow-lg">
+                                    <input type="number" placeholder="Base Price" class="form-control my-3">
+
+                                    <input type="number" placeholder="Discounted Price" class="form-control my-3">
+                                    <div class="d-flex my-2 align-items-center gap-1">
+                                        <input style="height:15px; width:15px;" type="checkbox" class="form-check">
+                                        <p class="text-gray m-0"> Charge tax on this</p>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="text-gray m-0">In stock</p>
+                                        <div class="switch">
+                                            <div class="switch-btn"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
                             </div>
 
                         </div>
@@ -101,7 +124,101 @@
     <?php include '../boot_js.php' ?>
 
 
+    <script type="text/javascript">
+        let options = document.querySelectorAll(".editor-option");
+        let text = document.querySelector(".textarea-text");
 
+
+        options.forEach((item, index) => {
+            if (index == 0) {
+
+                item.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                    text.classList.toggle('fw-bold');
+
+                })
+            }
+            if (index == 1) {
+
+                item.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                    text.classList.toggle('text-decoration-underline');
+
+                })
+            }
+
+            if (index == 2) {
+
+                item.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                    text.classList.toggle('fst-italic');
+
+                })
+            }
+            if (index == 3) {
+
+                item.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                    text.classList.toggle('text-decoration-line-through');
+
+                })
+            }
+            if (index == 4) {
+
+                item.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                    text.classList.toggle('text-start');
+
+                })
+            } else if (index == 5) {
+
+                item.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                    text.classList.toggle('text-center');
+
+                })
+            } else if (index == 6) {
+
+                item.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                    text.classList.toggle('text-end');
+
+                })
+            }
+
+
+
+
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // switch button functionality
+
+
+
+        let switch_btn=document.querySelector(".switch");
+
+        switch_btn.addEventListener('click',()=>{
+            switch_btn.classList.toggle('justify-content-start');
+            
+        })
+
+    </script>
 
 
 
