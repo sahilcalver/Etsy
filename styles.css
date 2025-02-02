@@ -331,10 +331,12 @@ body{
 
 }
 .switch{
+    transition: all 0.2s ease-in-out;
     height:20px;
     width:40px;
     border-radius:20px;
-    background-color: var(--orange) !important;
+    background-color: var(--grey)   ;
+   
     padding: 0.1rem 0rem;
     display: flex;
     align-items: center;

@@ -103,7 +103,8 @@
                                     <hr>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <p class="text-gray m-0">In stock</p>
-                                        <div class="switch">
+                                        <div class="switch align-items-center ">
+
                                             <div class="switch-btn"></div>
                                         </div>
                                     </div>
@@ -211,13 +212,20 @@
 
 
 
-        let switch_btn=document.querySelector(".switch");
+        let switch_btn = document.querySelector(".switch");
+        let stock = document.querySelector("input[name='stock']")
 
-        switch_btn.addEventListener('click',()=>{
+        switch_btn.addEventListener('click', () => {
             switch_btn.classList.toggle('justify-content-start');
-            
-        })
+            if (switch_btn.classList.contains('justify-content-start')) {
+                switch_btn.style.backgroundColor = 'var(--orange)';
+            } else {
+                switch_btn.style.backgroundColor = 'var(--grey)';
+            }
 
+            stock.setAttribute('checked', 'false');
+
+        })
     </script>
 
 
