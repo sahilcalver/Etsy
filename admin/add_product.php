@@ -188,29 +188,11 @@
             }
 
 
-
-
-
-
         });
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         // switch button functionality
-
-
 
         let switch_btn = document.querySelector(".switch");
         let stock = document.querySelector("input[name='stock']")
