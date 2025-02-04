@@ -90,6 +90,12 @@
                                     </div>
 
                                 </div>
+                                <div class="card p-4 my-3 shadow-lg border-0">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h6>Product Image</h6>
+                                        <h6 class="text-orange">Add media from URL</h6>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="card p-4 border-0 shadow-lg">
@@ -103,8 +109,8 @@
                                     <hr>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <p class="text-gray m-0">In stock</p>
-                                        <div class="switch align-items-center ">
-                                            <input type="checkbox" name="stock">
+                                        <div class="switch align-items-center position-relative">
+                                            <input type="checkbox" class="position-absolute end-0 me-1" name="stock">
                                             <div class="switch-btn"></div>
                                         </div>
                                     </div>
