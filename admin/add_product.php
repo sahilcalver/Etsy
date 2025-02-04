@@ -116,7 +116,7 @@
                                             </div>
 
                                         </div>
-                                        <i class="bi bi-x fs-3"></i>
+                                        <i class="bi bi-x fs-3 close-selected-img"></i>
                                     </div>
                                 </div>
                             </div>
@@ -257,14 +257,14 @@
         let image_image = document.querySelector('.image-image');
         let image_h6 = document.querySelector('.image-h6');
         let image_p = document.querySelector('.image-p');
-
+        let close_selected_img = document.querySelector('.close-selected-img');
 
 
         image_input.addEventListener('change', (e) => {
             image_preview.classList.remove('d-none')
-            let image = e.files[0];
-            let image_name = image.image_name;
-            let image_size = image.size / 1024;
+            let image = e.target.files[0];
+            let image_name = image.name;
+            let image_size = (image.size / 1024).toFixed(0)
             // converting object to a url
             let image_link = URL.createObjectURL(image);
 
@@ -272,6 +272,11 @@
             image_h6.innerHTML = image_name;
             image_p.innerHTML = `${image_size}KB`;
         });
+
+
+        close_selected_img.addEventListener('click', () => {
+            image_preview.classList.add('d-none')
+        })
     </script>
 
 
