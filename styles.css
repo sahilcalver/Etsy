@@ -353,3 +353,21 @@ width:60%;
 z-index: 3;
 transition: all 0.3 seconds !important;
 }
+
+
+.btn-outline-orange{
+    border:1px solid var(--orange);
+    width:max-content;
+    padding: 10px 20px;
+    align-self:center;
+    transition: all 0.3s;
+    color: var(--orange);
+}
+
+.btn-outline-orange:hover{
+    color:#b8d5e8;
+    background-color: var(--orange);
+    border-color: white;
+
+
+}

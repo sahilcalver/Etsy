@@ -9,7 +9,7 @@
     <title>Admin Dashboard || Categories</title>
 </head>
 
-<body>
+<body style="overflow: hidden; margin:0px; ">
 
     <?php
 
@@ -22,18 +22,18 @@
     <div style="max-width:99%;">
 
         <?php include './admin_nav.php' ?>
-        <div class="admin-main-content row">
+        <div class="admin-main-content row ">
 
 
 
-            <div class="row" style="background-color: lightgray;">
+            <div class="row" style="background-color: lightgray; ">
 
 
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 m-0">
                     <?php include './admin-sidebar.php' ?>
                 </div>
-                <div class="col-xl-10 col-lg-9 col-md-8 col-sm-8 p-5 m-0">
-                    <form action="./add_product_data.php" method="POST" enctype="multipart/form-data">
+                <div class="col-xl-10 col-lg-9 col-md-8 col-sm-8 p-5 m-0 " style="overflow-y: scroll; height:100vh;">
+                    <form action=" ./add_product_data.php" method="POST" enctype="multipart/form-data">
 
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex flex-column justify-content-center align-items">
@@ -94,6 +94,29 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <h6>Product Image</h6>
                                         <h6 class="text-orange">Add media from URL</h6>
+
+                                    </div>
+                                    <input type="file" class="image-input d-none">
+                                    <div class="card p-5 justify-content-center image-trigger" style="border:1px solid black; border-style:dashed;">
+                                        <div class="d-flex flex-column align-items-center ">
+                                            <div style="height: 40px; width:40px;" class="d-flex align-items-center justify-content-center bg-light">
+                                                <i class="bi bi-upload" style="color:#8A8D93"></i>
+                                            </div>
+                                        </div>
+                                        <h3 class="text-center">Drag & Drop Your Image Here</h3>
+                                        <p class="text-secondary text-center">or</p>
+                                        <button type="button" class="btn-outline-orange"> Browse Image</button>
+                                    </div>
+                                    <div class="image-preview justify-content-between align-items-center border p-3 my-3 rounded-3 d-flex d-none">
+                                        <div class="d-flex gap-2">
+                                            <img class="image-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2IYhSn8Y9S9_HF3tVaYOepJBcrYcd809pBA&s" height="50px" width="50px" alt="">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="image-h6 m-0">name</h6>
+                                                <p class="image-p m-0">size</p>
+                                            </div>
+
+                                        </div>
+                                        <i class="bi bi-x fs-3"></i>
                                     </div>
                                 </div>
                             </div>
@@ -213,7 +236,42 @@
 
             // Correct way to toggle checkbox state
             stock.checked = !stock.checked;
+
+
         })
+
+
+        let image_input = document.querySelector('.image-input');
+        let image_trigger = document.querySelector('.image-trigger');
+
+
+
+
+        image_trigger.addEventListener('click', () => {
+            image_input.click();
+        })
+
+
+
+        let image_preview = document.querySelector('.image-preview');
+        let image_image = document.querySelector('.image-image');
+        let image_h6 = document.querySelector('.image-h6');
+        let image_p = document.querySelector('.image-p');
+
+
+
+        image_input.addEventListener('change', (e) => {
+            image_preview.classList.remove('d-none')
+            let image = e.files[0];
+            let image_name = image.image_name;
+            let image_size = image.size / 1024;
+            // converting object to a url
+            let image_link = URL.createObjectURL(image);
+
+            image_image.src = image_link;
+            image_h6.innerHTML = image_name;
+            image_p.innerHTML = `${image_size}KB`;
+        });
     </script>
 
 
