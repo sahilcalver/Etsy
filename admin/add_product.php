@@ -104,7 +104,7 @@
                                     <div class="d-flex align-items-center justify-content-between">
                                         <p class="text-gray m-0">In stock</p>
                                         <div class="switch align-items-center ">
-
+                                            <input type="checkbox" name="stock">
                                             <div class="switch-btn"></div>
                                         </div>
                                     </div>
@@ -205,8 +205,8 @@
                 switch_btn.style.backgroundColor = 'var(--grey)';
             }
 
-            stock.setAttribute('checked', 'false');
-
+            // Correct way to toggle checkbox state
+            stock.checked = !stock.checked;
         })
     </script>
 
